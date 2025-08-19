@@ -45,15 +45,19 @@ Terraform_project/
    git clone https://github.com/your-username/simple-terraform-project.git
    cd simple-terraform-project
 2.**Initialize Terraform:**
+  ```bash
 terraform init
 
 3. **Preview the changes:**
+```bash
 terraform plan
 
 4.**Apply the configuration:**
+```bash
 terraform apply
 
 5.**To destroy the resources:**
+```bash
 terraform destroy
 
 ⚠️ Make sure your AWS CLI is configured properly with access keys.
