@@ -1,60 +1,11 @@
-#create s3 bucket
 resource "aws_s3_bucket" "mybucket" {
-  bucket = var.bucketname
-}
-
-resource "aws_s3_bucket_ownership_controls" "example" {
-  bucket = aws_s3_bucket.mybucket.id
-
-  rule {
-    object_ownership = "BucketOwnerPreferred"
-  }
-}
-
-resource "aws_s3_bucket_public_access_block" "example" {
-  bucket = aws_s3_bucket.mybucket.id
-
-  block_public_acls       = false
-  block_public_policy     = false
-  ignore_public_acls      = false
-  restrict_public_buckets = false
-}
-
-resource "aws_s3_bucket_acl" "example" {
-  depends_on = [
-    aws_s3_bucket_ownership_controls.example,
-    aws_s3_bucket_public_access_block.example,
-  ]
-
-  bucket = aws_s3_bucket.mybucket.id
-  acl    = "public-read"
-}
-
-resource "aws_s3_object" "index" {
-  bucket = aws_s3_bucket.mybucket.id
-  key = "index.html"
-  source = "index.html"
-  acl = "public-read"
-  content_type = "text/html"
-}
-
-resource "aws_s3_object" "error" {
-  bucket = aws_s3_bucket.mybucket.id
-  key = "error.html"
-  source = "error.html"
-  acl = "public-read"
-  content_type = "text/html"
-}
-
-resource "aws_s3_object" "profile" {
-  bucket = aws_s3_bucket.mybucket.id
-  key = "profile.png"
-  source = "profile.png"
-  acl = "public-read"
+  bucket = "myterraformprojectwebsite2023-prema12345"
+  acl    = "private"
 }
 
 resource "aws_s3_bucket_website_configuration" "website" {
-  bucket = aws_s3_bucket.mybucket.id
+  bucket = aws_s3_bucket.mybucket.bucket
+
   index_document {
     suffix = "index.html"
   }
@@ -62,6 +13,32 @@ resource "aws_s3_bucket_website_configuration" "website" {
   error_document {
     key = "error.html"
   }
+}
 
-  depends_on = [ aws_s3_bucket_acl.example ]
+resource "aws_s3_bucket_acl" "example" {
+  bucket = aws_s3_bucket.mybucket.bucket
+  acl    = "public-read"
+}
+
+resource "aws_s3_object" "index" {
+  bucket       = aws_s3_bucket.mybucket.id
+  key          = "index.html"
+  source       = "index.html"
+  content_type = "text/html"
+  acl          = "public-read"
+  etag         = filemd5("index.html")
+
+  metadata = {
+    Cache-Control = "no-store, no-cache, must-revalidate, max-age=0"
+  }
+}
+ 
+
+
+resource "aws_s3_object" "error" {
+  bucket = aws_s3_bucket.mybucket.bucket
+  key    = "error.html"
+  source = "error.html"
+  acl    = "public-read"
+  content_type = "text/html"
 }
