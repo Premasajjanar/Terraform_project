@@ -6,15 +6,17 @@ This project uses **Terraform** to provision and manage AWS infrastructure for d
 
 ## 📁 Project Structure
 
+```
 Terraform_project/
-│
-├── index.html # Main HTML file for the website
-├── error.html # Custom error page
-├── provider.tf # Defines AWS provider
-├── s3.tf # Terraform script to create S3 bucket and policies
-├── variables.tf # Input variables for region, bucket name, etc.
-├── output.tf # Outputs like website endpoint
-├── terraform.tfstate # Terraform state file (not pushed to GitHub)
+├── index.html              # Main HTML file for the website
+├── error.html              # Custom error page
+├── provider.tf             # Defines AWS provider
+├── s3.tf                   # Terraform script to create S3 bucket and policies
+├── variables.tf            # Input variables for region, bucket name, etc.
+├── output.tf               # Outputs like website endpoint
+├── terraform.tfstate       # Terraform state file (not pushed to GitHub)
+```
+
 
 
 ---
