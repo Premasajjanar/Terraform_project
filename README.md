@@ -40,41 +40,27 @@ Terraform_project/
 
 ## 🚀 How to Deploy
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/Premasajjanar/Terraform_project.git
-cd Terraform_project
-
-2. Initialize Terraform
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/your-username/simple-terraform-project.git
+   cd simple-terraform-project
+2.**Initialize Terraform:**
 terraform init
 
-3. Plan the deployment
+3. **Preview the changes:**
 terraform plan
 
-4. Apply the configuration
+4.**Apply the configuration:**
 terraform apply
 
-You will be prompted to confirm the action with yes.
+5.**To destroy the resources:**
+terraform destroy
+
+⚠️ Make sure your AWS CLI is configured properly with access keys.
+
+## Connect with Me
+
+- [LinkedIn](https://www.linkedin.com/in/prema-sajjanar-0bb316252)
+- [GitHub](https://github.com/Premasajjanar)
 
 
-📌 Output
-
-After a successful deployment, Terraform will display the S3 Website Endpoint like:
-
-http://your-bucket-name.s3-website-us-east-1.amazonaws.com
-
-
-Open the URL in your browser to view your hosted website 🎉
-
-
-👩‍💻 Author
-
-Prema Sajjanar
-Final Year CSE Student | Passionate about Cloud, DevOps & AI
-[LinkedIn](https://www.linkedin.com/in/prema-sajjanar-0bb316252)
-[GitHub](https://github.com/Premasajjanar)
-
-📜 License
-
-This project is open source and available under the MIT License
-.
