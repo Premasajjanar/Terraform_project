@@ -46,19 +46,18 @@ Terraform_project/
    cd simple-terraform-project
 2.**Initialize Terraform:**
   ```bash
-terraform init
-
+   terraform init
 3. **Preview the changes:**
 ```bash
-terraform plan
+   terraform plan
 
 4.**Apply the configuration:**
 ```bash
-terraform apply
+   terraform apply
 
 5.**To destroy the resources:**
 ```bash
-terraform destroy
+   terraform destroy
 
 ⚠️ Make sure your AWS CLI is configured properly with access keys.
 
