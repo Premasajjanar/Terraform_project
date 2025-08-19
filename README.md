@@ -38,38 +38,29 @@ Terraform_project/
 
 ---
 
-# Simple Terraform Project
-
-A basic Terraform project to provision infrastructure using AWS.
-
----
-
-## 🚀 Steps to Use
+## 🚀 How to Deploy
 
 1. **Clone this repository:**
    ```bash
    git clone https://github.com/your-username/simple-terraform-project.git
    cd simple-terraform-project
-Initialize Terraform:
 
-bash
-Copy code
-terraform init
-Preview the changes:
+2. **Initialize Terraform:**
+   ```bash
+   terraform init
+   
+3. **Preview the changes:**
+   ```bash
+   terraform plan
 
-bash
-Copy code
-terraform plan
-Apply the configuration:
+4. **Apply the configuration:**
+   ```bash
+   terraform apply
 
-bash
-Copy code
-terraform apply
-To destroy the resources:
+5. **To destroy the resources:**
+   ```bash
+   terraform destroy
 
-bash
-Copy code
-terraform destroy
 ⚠️ Make sure your AWS CLI is configured properly with access keys.
 
 ## Connect with Me
